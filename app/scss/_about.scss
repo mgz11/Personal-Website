@@ -1,0 +1,127 @@
+#about {
+    background-color: $light;
+    color: $dark;
+    height: 1000px;
+
+    img {
+        @include img-dimensions-desktop;
+        border-radius: 8px;
+    }
+}
+
+.about-title {
+  @include section-title-desktop;
+}
+
+.introduction {
+    display: flex;
+    justify-content: center;
+    margin: 0 10% 130px 10%;
+
+    .intro-img {
+        margin-right: 70px;
+    }
+
+    .intro-content {
+        display: flex;
+        flex-direction: column;
+        width: 550px;
+
+        .intro-title {
+            @include section-subheader-desktop;
+            margin-bottom: 32px;
+        }
+
+        .intro-text {
+            @include section-text-desktop;
+            color: $body-text;
+        }
+    }
+}
+
+.interests {
+    display: flex;
+    justify-content: center;
+    margin: 0 10% 0 10%;
+
+    .interests-img {
+        margin-left: 70px;
+    }
+
+    .interests-content {
+        display: flex;
+        flex-direction: column;
+        width: 550px;
+
+        .interests-title {
+            @include section-subheader-desktop;
+            margin-bottom: 32px;
+        }
+
+        .interests-text {
+            @include section-text-desktop;
+            color: $body-text;
+        }
+    }
+}
+
+// Tablet view
+@media screen and (max-width: 900px) {
+    #about {
+        height: 100%;
+        width: 100%;
+
+        img {
+            @include img-dimensions-tablet;
+        }
+    }
+
+    .about-title {
+        @include section-title-tablet;
+    }
+
+    .introduction, .interests {
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+
+        .intro-img {
+            margin: 0;
+        }
+
+        .interests-img {
+            margin: 30px 0 40px 0;
+        }
+
+        .intro-content, .interests-content {
+            width: 375px;
+
+            .intro-title, .interests-title {
+                display: flex;
+                justify-content: center;
+                padding: 30px 0 20px 0;
+                margin: 0;
+            }
+        }
+    }
+}
+
+// Mobile view 
+@media screen and (max-width: 450px) {
+    #about {
+        img {
+            @include img-dimensions-mobile;
+        }
+    }
+
+    .about-title {
+        @include section-title-mobile;
+    }
+
+    .introduction, .interests {
+        .intro-content, .interests-content {
+            width: 250px;
+        }
+    }
+    
+}

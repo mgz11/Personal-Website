@@ -1,0 +1,155 @@
+.hamburger, .mobile-nav {
+    display: none;
+}
+
+.navbar-links {
+    background-color: $navBg;
+    margin: 0 7% 0 7%;
+    padding: 26px 0px 26px 0px;
+    border-radius: 0 0 10px 10px;
+
+    ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        font-family: $body-font-family;
+        font-weight: $font-weight-normal;
+        font-size: 16px;
+        text-decoration: none;
+        color: $light;
+        padding: 0 30px 0 30px;
+        transition: all 0.1s ease-in-out;
+
+        &:hover, &:active {
+            color: $navGlow;
+            text-shadow: 0 0 10px $navGlow,
+                         0 0 20px $navGlow,
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .navbar-links {
+        display: none;
+    }
+
+    .hamburger {
+        position: relative;
+        display: block;
+        width: 95px;
+        height: 80px;
+        padding: 20px 30px;
+        background: none;
+        appearance: none;
+        outline: none;
+        border: none;
+        z-index: 3;
+        cursor: pointer;
+
+        // Adds 1st and 3rd bars 
+        .bar, &:after, &:before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 5px;
+            background-color: $light;
+            margin: 6px 0;
+            transition: 0.4s;
+        }        
+    }
+
+    // Change bars to X when clicked
+    .is-active {
+        &:before {
+            transform: rotate(-45deg) translate(-8px, 6px);
+        }
+
+        .bar {
+            opacity: 0;
+        }
+
+        &:after {
+            transform: rotate(45deg) translate(-9px, -8px);
+        }
+
+        width: 295px;
+        padding-left: 220px;
+    }
+
+    .mobile-nav {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 100%;
+        width: 100%;
+        min-height: 100vh;
+        z-index: 2;
+        padding-top: 120px;
+
+        // Purple glass effect on mobile nav
+        background-color: rgba(151, 71, 255, 0.7);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        backdrop-filter: blur(4px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        transition: 0.4s;
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            display: block;
+            width: 100%;
+            max-width: 250px;
+            color: white;
+            font-size: 20px;
+            margin-bottom: 16px;
+            padding: 12px 0px;
+            text-align: left;
+            text-decoration: none;
+
+            &:hover, &:active {
+                color: $light;
+                text-shadow: 0 0 10px $light,
+                             0 0 20px $light,
+            }
+        }
+    }
+
+    .is-active {
+        right: 200px;
+    }
+
+    .scroll-lock {
+        overflow: hidden;
+    }
+}
+
+// Need to adjust mobile nav for smaller viewports
+// Can try to find way to make it slide out only a portion of
+// the width instead of a fixed width
+
+// Mobile view
+@media screen and (max-width: 450px) {
+    .hamburger.is-active {
+        width: 215px;
+    }
+
+    .is-active {
+        right: 120px;
+        padding-left: 140px;
+    }
+
+    .mobile-nav {
+        a {
+            padding-right: 10px;
+            font-size: 16px;
+        }
+    }
+}

@@ -1,0 +1,77 @@
+// Colors
+$navGlow: hsl(273, 56%, 67%);
+$navBg: hsl(0, 0%, 15%);
+$menuBg: hsl(94, 59%, 12%);
+$body-text: hsl(0, 0%, 61%);
+$dark: hsl(0, 0, 7%);
+$light: hsl(0, 0, 95%);
+$buttonColor: hsl(266, 100%, 64%);
+
+// Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800&display=swap');
+$heading-font-family: "Raleway", sans-serif;
+$body-font-family: "IBM Plex Mono", sans-serif;
+$font-weight-normal: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+
+
+// Use mixins later for modularization of code
+@mixin section-title-desktop {
+    font-family: $heading-font-family;
+    font-weight: $font-weight-extrabold;
+    font-size: 34px;
+    display: flex;
+    justify-content: center;
+    padding-top: 70px;
+    padding-bottom: 60px;
+}
+
+@mixin section-title-tablet {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 28px;
+}
+
+@mixin section-title-mobile {
+    font-size: 24px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+@mixin section-subheader-desktop {
+    font-family: $heading-font-family;
+    font-weight: $font-weight-extrabold;
+    font-size: 24px;
+}
+
+@mixin section-subheader-mobile {
+    font-size: 18px;
+}
+
+@mixin section-text-desktop {
+    font-family: $body-font-family;
+    font-weight: $font-weight-normal;
+    font-size: 14px;
+}
+
+@mixin section-text-mobile {
+    font-size: 12px;
+}
+
+@mixin img-dimensions-desktop {
+    width: 445px;
+    height: 300px;
+}
+
+@mixin img-dimensions-tablet {
+    width: 320px;
+    height: 250px;
+}
+
+@mixin img-dimensions-mobile {
+    width: 212px;
+    height: 200px;
+}
