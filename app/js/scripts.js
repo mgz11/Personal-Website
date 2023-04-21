@@ -1,4 +1,4 @@
-use 'strict'
+'use strict'
 
 // Hamburger menu 
 const menu_btn = document.querySelector(".hamburger");
