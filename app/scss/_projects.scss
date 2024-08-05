@@ -1,124 +1,135 @@
 #projects {
-    background-color: $light;
-    color: $dark;
-    height: 800px;
+	background-color: $light;
+	color: $dark;
+	height: 800px;
 
-    img {
-        @include img-dimensions-desktop;
-        border-radius: 8px;
-    }
+	img {
+		@include img-dimensions-desktop;
+		border-radius: 8px;
+	}
 }
 
 .projects-title {
-    @include section-title-desktop;
+	@include section-title-desktop;
 }
 
 .main-project-container {
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
 
-    .project1-container, .project2-container {
-        width: 445px;
-        height: 500px;
-    }
+	.project1-container,
+	.project2-container {
+		width: 445px;
+		height: 500px;
+	}
 
-    .project1-container {
-        margin-right: 40px;
-        margin-left: 40px;
-    }
+	.project1-container img {
+		object-fit: contain;
+	}
 
-    .project2-container {
-        margin-left: 40px;
-        margin-right: 40px;
-    }
+	.project1-container {
+		margin-right: 40px;
+		margin-left: 40px;
+	}
 
-    .project1-title, .project2-title {
-        @include section-subheader-desktop;
-        margin: 40px 0 20px 0;
-    }
+	.project2-container {
+		margin-left: 40px;
+		margin-right: 40px;
+	}
 
-    .project1-desc, .project2-desc {
-        @include section-text-desktop;
-        color: $body-text;
-        margin-bottom: 20px;
-        height: 110px;
-    }
+	.project1-title,
+	.project2-title {
+		@include section-subheader-desktop;
+		margin: 40px 0 20px 0;
+	}
 
-    button {
-        font-family: $body-font-family;
-        font-weight: $font-weight-bold;
-        font-size: 14px;
-        background-color: $buttonColor;
-        color: $light;
-        padding: 10px 24px;
-        border-radius: 8px;;
-        border: none;
-        transition: all 0.2s ease-in-out;
-        cursor: pointer;
+	.project1-desc,
+	.project2-desc {
+		@include section-text-desktop;
+		color: $body-text;
+		margin-bottom: 20px;
+		height: 110px;
+	}
 
-        // Button glow
-        &:hover, &:active {
-            box-shadow: 0 5px 20px $navGlow,
-                        0 5px 30px $navGlow;
-        }
-    }
+	button {
+		font-family: $body-font-family;
+		font-weight: $font-weight-bold;
+		font-size: 14px;
+		background-color: $buttonColor;
+		color: $light;
+		padding: 10px 24px;
+		border-radius: 8px;
+		border: none;
+		transition: all 0.2s ease-in-out;
+		cursor: pointer;
+
+		// Button glow
+		&:hover,
+		&:active {
+			box-shadow: 0 5px 20px $navGlow, 0 5px 30px $navGlow;
+		}
+	}
 }
 
 //Tablet view
 @media screen and (max-width: 900px) {
-    #projects {
-        height: 100%;
+	#projects {
+		height: 100%;
 
-        img {
-            @include img-dimensions-tablet;
-        }
-    }
-    .projects-title {
-        @include section-title-tablet;
-    }
+		img {
+			@include img-dimensions-tablet;
+		}
+	}
+	.projects-title {
+		@include section-title-tablet;
+	}
 
-    .main-project-container {
-        flex-direction: column;
-        align-items: center;
+	.main-project-container {
+		flex-direction: column;
+		align-items: center;
 
-        .project1-container, .project2-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 350px;
-        }
+		.project1-container,
+		.project2-container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 350px;
+		}
 
-        .project1-title, .project2-title {
-            @include section-subheader-mobile;
-            margin: 20px 0 10px 0;
-        }
+		.project1-title,
+		.project2-title {
+			@include section-subheader-mobile;
+			margin: 20px 0 10px 0;
+		}
 
-        .project1-desc, .project2-desc {
-            margin-bottom: 30px;
-        }
+		.project1-desc,
+		.project2-desc {
+			margin-bottom: 30px;
+		}
 
-        button {
-            margin-bottom: 30px;
-        }
-    }
+		button {
+			margin-bottom: 30px;
+		}
+	}
 }
 
-// Mobile view 
+// Mobile view
 @media screen and (max-width: 450px) {
-    #projects {
-        img {
-            @include img-dimensions-mobile;
-        }
-    }
+	#projects {
+		img {
+			@include img-dimensions-mobile;
+		}
+	}
 
-    .projects-title {
-        @include section-title-mobile;
-    }
+	.projects-title {
+		@include section-title-mobile;
+	}
 
-    .main-project-container {
-        .project1-container, .project2-container {
-            width: 260px;
-            height: 100%;
-        }
-    }
+	.main-project-container {
+		.project1-container,
+		.project2-container {
+			width: 260px;
+			height: 100%;
+		}
+	}
 }
